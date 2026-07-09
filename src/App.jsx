@@ -1,7 +1,8 @@
-const past = [
-  'Member of Technical Staff Intern @ Ise AI',
-  'AI Research Intern @ Modern Vision Planning',
-  'Logistics @ Great Worldwide Logistics',
+const experiences = [
+  'Currently building logistics startup for data pipelining & automations',
+  'Member of Technical Staff Intern @ Ise AI (Sequoia), Jun 2026 - Present',
+  'AI Research Intern @ Modern Vision Planning, Mar 2026 - May 2026',
+  'Logistics Intern @ Great Worldwide Logistics, Jun 2025 - Aug 2025',
 ]
 
 const school = ['University of Waterloo', 'CS + Finance']
@@ -59,7 +60,7 @@ function App() {
       <section className="section" aria-labelledby="experiences-heading">
         <h2 id="experiences-heading">Experiences</h2>
         <div className="text-list">
-          {past.map((item) => (
+          {experiences.map((item) => (
             <p key={item}>{item}</p>
           ))}
         </div>
