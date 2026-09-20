@@ -1,0 +1,1 @@
+personal site, horrible best practices + super messy vibe code slop (pinky swear im not usually like this) -> just want my site out theres no point in indexing on a beautifully crafted personal site that has good code quality and commit messages and whatnot :)
