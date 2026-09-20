@@ -1,0 +1,351 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="David Chen is a CS + Finance student at UWaterloo building ambitious, thoughtful software."
+    />
+    <meta name="theme-color" content="#fafaf7" />
+    <title>David Chen — Software, systems, and experiments</title>
+    <script type="module" src="/src/main.ts"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+
+    <header class="site-header" aria-label="Primary">
+      <a class="site-name" href="#me" aria-label="David Chen, home">David Chen</a>
+      <nav class="site-nav" aria-label="Site index">
+        <a href="#me" data-nav-link>me</a>
+        <a href="#work" data-nav-link>work</a>
+        <a href="#experience" data-nav-link>experience</a>
+        <a href="#thoughts" data-nav-link>thoughts</a>
+        <a href="#side-b" data-nav-link>side b</a>
+        <a href="#contact" data-nav-link>contact</a>
+      </nav>
+    </header>
+
+    <main id="main">
+      <section id="me" class="hero" aria-labelledby="hero-title" data-section>
+        <div class="hero-copy">
+          <p class="eyebrow">CS + Finance @ UWaterloo</p>
+          <h1 id="hero-title">In love with <em>the game.</em></h1>
+          <p class="intro">
+            I build software, learn the parts I do not know yet, and care a little
+            too much about making the result feel right.
+          </p>
+          <a class="text-link hero-link" href="#work">See the work <span aria-hidden="true">↓</span></a>
+        </div>
+
+        <figure class="hero-art" aria-hidden="true">
+          <picture>
+            <source
+              type="image/avif"
+              srcset="/assets/portfolio-landscape-study-720.avif 720w, /assets/portfolio-landscape-study-1086.avif 1086w"
+              sizes="(min-width: 768px) 72vw, 100vw"
+            />
+            <source
+              type="image/webp"
+              srcset="/assets/portfolio-landscape-study-720.webp 720w, /assets/portfolio-landscape-study-1086.webp 1086w"
+              sizes="(min-width: 768px) 72vw, 100vw"
+            />
+            <img
+              src="/assets/portfolio-landscape-study.png"
+              width="1086"
+              height="1448"
+              alt=""
+              fetchpriority="high"
+            />
+          </picture>
+        </figure>
+
+        <dl class="proof-strip" aria-label="Selected outcomes">
+          <div><dt>$14.8K</dt><dd>moved</dd></div>
+          <div><dt>5,600+</dt><dd>transactions</dd></div>
+          <div><dt>2</dt><dd>hackathon podiums</dd></div>
+          <div><dt>282</dt><dd>commits / 2 months</dd></div>
+        </dl>
+      </section>
+
+      <section id="work" class="page-section work-section" aria-labelledby="work-title" data-section>
+        <header class="section-header reveal">
+          <p class="section-kicker">01 / selected work</p>
+          <div>
+            <h2 id="work-title">Proof, not pitch.</h2>
+            <p>Products, systems, and experiments—each with a different job to do.</p>
+          </div>
+        </header>
+
+        <div class="filter-bar reveal" aria-label="Filter projects">
+          <span class="filter-label">show</span>
+          <button type="button" data-filter="all" aria-pressed="true">all</button>
+          <button type="button" data-filter="product" aria-pressed="false">product</button>
+          <button type="button" data-filter="systems" aria-pressed="false">systems</button>
+          <button type="button" data-filter="experiments" aria-pressed="false">experiments</button>
+          <span class="filter-status" aria-live="polite" data-filter-status>7 projects</span>
+        </div>
+
+        <div class="featured-work" data-project-list>
+          <article class="project project-featured reveal" data-project data-categories="systems experiments">
+            <div class="project-number" aria-hidden="true">01</div>
+            <div class="project-body">
+              <div class="project-meta">
+                <span>systems / developer tools</span>
+                <span class="status-label">private → public soon</span>
+              </div>
+              <h3>Oh My Diff</h3>
+              <p class="project-lede">
+                A moddable patch set for the Codex CLI. It keeps <code>codex</code> as the daily
+                driver while opening coordination, context, tools, and terminal behavior to
+                TypeScript mods.
+              </p>
+              <p class="project-detail">
+                The native foundation and an experimental mod host work today; the broader
+                public API is still in progress.
+              </p>
+              <div class="game-tape" tabindex="0">
+                <span>game tape</span>
+                <strong>Current flagship</strong>
+                <p>Building the seams carefully before making promises about savings.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project project-featured project-shift reveal" data-project data-categories="product systems">
+            <div class="project-number" aria-hidden="true">02</div>
+            <div class="project-body">
+              <div class="project-meta"><span>fintech / school events</span><span>shipped</span></div>
+              <h3>FraserPay</h3>
+              <p class="project-lede">
+                A school-event wallet and append-only ledger used by 1,000+ students to move
+                $14.8K across 5,600+ QR-code transactions.
+              </p>
+              <p class="project-detail">
+                Built for integrity under pressure with idempotent checkout, offline PWA
+                behavior, 700+ tests, and a measured 37 ms p95 at 10+ charges per second.
+              </p>
+              <div class="game-tape" tabindex="0">
+                <span>result</span>
+                <strong>5,600+ transactions</strong>
+                <p>Real money movement made correctness the product.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project project-featured reveal" data-project data-categories="product systems">
+            <div class="project-number" aria-hidden="true">03</div>
+            <div class="project-body">
+              <div class="project-meta"><span>community / full stack</span><span>shipped</span></div>
+              <h3>Fraser Grads ’26</h3>
+              <p class="project-lede">
+                An unofficial digital yearbook and survey platform for Fraser’s graduating
+                class, with 300+ authenticated submissions.
+              </p>
+              <p class="project-detail">
+                A Next.js frontend and Go API use HMAC-signed service calls, Postgres, direct
+                Cloudflare R2 uploads, and generated validation shared across the stack.
+              </p>
+              <div class="game-tape" tabindex="0">
+                <span>result</span>
+                <strong>300+ submissions</strong>
+                <p>Community software designed for one real graduating class.</p>
+              </div>
+            </div>
+          </article>
+
+          <article class="project project-featured project-shift reveal" data-project data-categories="product experiments">
+            <div class="project-number" aria-hidden="true">04</div>
+            <div class="project-body">
+              <div class="project-meta"><span>multimodal / music</span><span>2nd @ Eureka Hacks ’26</span></div>
+              <h3>Doceo</h3>
+              <p class="project-lede">
+                A piano coach that turns one performance video into score alignment, posture
+                checks, spoken feedback, and practice drills.
+              </p>
+              <p class="project-detail">
+                The FastAPI pipeline combines Basic Pitch, MIDI preprocessing, DTW, OpenCV,
+                MediaPipe, Gemini, and ElevenLabs, reaching roughly 80% note-alignment accuracy.
+              </p>
+              <div class="game-tape" tabindex="0">
+                <span>result</span>
+                <strong>≈80% alignment</strong>
+                <p>Multimodal feedback assembled under a hackathon deadline.</p>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <div class="more-builds reveal">
+          <div class="subsection-label">
+            <p>More builds</p>
+            <span>smaller frame, same curiosity</span>
+          </div>
+          <div class="compact-projects">
+            <article class="compact-project" data-project data-categories="systems experiments">
+              <div class="compact-heading"><span>05</span><h3>Penny</h3></div>
+              <p>
+                A local-first Python pentesting assistant that safely proves findings with
+                read-only probes and hands ranked fixes to coding agents. Second in the GenAI
+                category at JamHacks 10.
+              </p>
+              <span class="project-tag">security / agents</span>
+            </article>
+            <article class="compact-project" data-project data-categories="systems">
+              <div class="compact-heading"><span>06</span><h3>email-me</h3></div>
+              <p>
+                A Python CLI that turns YC company pages into founder-email candidates and
+                checks domains through MX records and SMTP handshakes.
+              </p>
+              <span class="project-tag">cli / data</span>
+            </article>
+            <article class="compact-project" data-project data-categories="experiments">
+              <div class="compact-heading"><span>07</span><h3>Dhen</h3></div>
+              <p>
+                Learnt Fabric + Kotlin through 282 commits over two months for a potential
+                internship at Moonsworth—better known as Lunar Client—only to get ghosted
+                <span aria-label="broken heart">&lt;/3</span>.
+              </p>
+              <span class="project-tag">game tape / honest postmortem</span>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="experience" class="page-section experience-section" aria-labelledby="experience-title" data-section>
+        <header class="section-header reveal">
+          <p class="section-kicker">02 / experience</p>
+          <div>
+            <h2 id="experience-title">Work with stakes.</h2>
+            <p>Company work stays company work.</p>
+          </div>
+        </header>
+
+        <div class="experience-list">
+          <article class="experience-item reveal">
+            <header>
+              <p>Member of Technical Staff Intern</p>
+              <h3>Ise AI</h3>
+            </header>
+            <ul>
+              <li>
+                Reduced duplicate image uploads from 26% to 7% across 258 GB of object storage
+                using validated first-party URLs, deterministic UUIDv5 identifiers, idempotent
+                PostgreSQL upserts, and request-scoped caching.
+              </li>
+              <li>
+                Shipped a React/Canvas ad generator that reduced a ten-step workflow to two file
+                drops for roughly 25 brands and cut mis-keyed pixels from 14.2% to under 5%.
+              </li>
+              <li>
+                Co-built a creator-sourcing platform screening 100,000+ social handles daily and
+                driving a 14% reply rate through qualified, scheduled outreach.
+              </li>
+            </ul>
+          </article>
+
+          <article class="experience-item reveal">
+            <header>
+              <p>Freight Forwarder Intern</p>
+              <h3>Great Worldwide Logistics</h3>
+            </header>
+            <ul>
+              <li>Coordinated logistics and technical support across 30+ weekly tickets.</li>
+              <li>
+                Processed shipping documents for 40+ shipments using IQAX and internal systems.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section id="thoughts" class="page-section thoughts-section" aria-labelledby="thoughts-title" data-section>
+        <header class="section-header reveal">
+          <p class="section-kicker">03 / thoughts</p>
+          <div>
+            <h2 id="thoughts-title">Nothing published yet.</h2>
+            <p>Short notes and long essays will live here when they’re ready.</p>
+          </div>
+        </header>
+
+        <div class="empty-state reveal">
+          <span aria-hidden="true">00:00</span>
+          <p>No filler essays. No manufactured takes.</p>
+          <small>the tape is blank, for now</small>
+        </div>
+      </section>
+
+      <section id="side-b" class="page-section side-b-section" aria-labelledby="side-b-title" data-section>
+        <div class="side-b-art" aria-hidden="true">
+          <picture>
+            <source type="image/webp" srcset="/assets/portfolio-landscape-study-720.webp" />
+            <img src="/assets/portfolio-landscape-study.png" width="1086" height="1448" alt="" loading="lazy" />
+          </picture>
+        </div>
+        <header class="section-header side-b-header reveal">
+          <p class="section-kicker">04 / side b</p>
+          <div>
+            <h2 id="side-b-title">Songs I like.</h2>
+            <p>Seven tracks, sequenced like liner notes. Spotify opens in a new tab.</p>
+          </div>
+        </header>
+
+        <ol class="track-list reveal">
+          <li>
+            <a href="https://open.spotify.com/track/0sSRLXxknVTQDStgU1NqpY" target="_blank" rel="noreferrer">
+              <span class="track-number">01</span><span class="track-title">Hours In Silence</span><span class="track-artist">Drake, 21 Savage</span><span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/track/5IFi8YfugyA9JBdfHlaMUP" target="_blank" rel="noreferrer">
+              <span class="track-number">02</span><span class="track-title">My Kitchen</span><span class="track-artist">Gucci Mane</span><span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/track/2iUmqdfGZcHIhS3b9E9EWq" target="_blank" rel="noreferrer">
+              <span class="track-number">03</span><span class="track-title">Everybody Talks</span><span class="track-artist">Neon Trees</span><span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/track/4o4wEDRqotccDTXiQ7TORu" target="_blank" rel="noreferrer">
+              <span class="track-number">04</span><span class="track-title">Un-thinkable (I’m Ready) — Remix</span><span class="track-artist">Alicia Keys, Drake</span><span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/track/1htQDV8JxSuXG2QsNj5ttr" target="_blank" rel="noreferrer">
+              <span class="track-number">05</span><span class="track-title">Last Friday Night (T.G.I.F.)</span><span class="track-artist">Katy Perry</span><span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/track/40tPP3K10yMZxwnT65REKj" target="_blank" rel="noreferrer">
+              <span class="track-number">06</span><span class="track-title">Inner Light</span><span class="track-artist">Elderbrook, Bob Moses</span><span aria-hidden="true">↗</span>
+            </a>
+          </li>
+          <li>
+            <a href="https://open.spotify.com/track/45sDIKapDyxPl307QpEAwl" target="_blank" rel="noreferrer">
+              <span class="track-number">07</span><span class="track-title">Rocketeer</span><span class="track-artist">Far East Movement, Ryan Tedder, Ruff Loaderz</span><span aria-hidden="true">↗</span>
+            </a>
+          </li>
+        </ol>
+      </section>
+    </main>
+
+    <footer id="contact" class="site-footer" data-section>
+      <div class="footer-intro reveal">
+        <p class="section-kicker">05 / contact</p>
+        <h2>Let’s make<br /><em>something good.</em></h2>
+      </div>
+      <div class="contact-links reveal" aria-label="Contact links">
+        <a href="mailto:d367chen@uwaterloo.ca"><span>email</span>d367chen@uwaterloo.ca <b aria-hidden="true">↗</b></a>
+        <a href="https://github.com/dzkchen" target="_blank" rel="me noreferrer"><span>github</span>@dzkchen <b aria-hidden="true">↗</b></a>
+        <a href="https://www.linkedin.com/in/davidzekaichen" target="_blank" rel="me noreferrer"><span>linkedin</span>David Zekai Chen <b aria-hidden="true">↗</b></a>
+        <a href="https://x.com/czkdavid" target="_blank" rel="me noreferrer"><span>x</span>@czkdavid <b aria-hidden="true">↗</b></a>
+      </div>
+      <div class="colophon">
+        <p>Built with semantic HTML, Tailwind CSS, and a little TypeScript.</p>
+        <p>Newsreader + Inter · edition 01</p>
+        <a href="#me">back to the top <span aria-hidden="true">↑</span></a>
+      </div>
+    </footer>
+  </body>
+</html>
