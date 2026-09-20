@@ -28,6 +28,9 @@ const assertPage = async (page: Page) => {
     tracks: document.querySelectorAll(".track-list li").length,
     contacts: document.querySelectorAll(".intro-section .inline-links a").length,
     projects: document.querySelectorAll("[data-project]").length,
+    projectLinks: Array.from(document.querySelectorAll<HTMLAnchorElement>("[data-project] h3 a")).map(
+      (link) => link.href,
+    ),
     centerDelta: Math.abs(
       document.querySelector<HTMLElement>(".site-shell")!.getBoundingClientRect().left +
         document.querySelector<HTMLElement>(".site-shell")!.getBoundingClientRect().width / 2 -
@@ -42,6 +45,9 @@ const assertPage = async (page: Page) => {
   if (structure.tracks !== 7) throw new Error(`Expected 7 tracks, found ${structure.tracks}`);
   if (structure.contacts !== 4) throw new Error(`Expected 4 contact links, found ${structure.contacts}`);
   if (structure.projects !== 6) throw new Error(`Expected 6 projects, found ${structure.projects}`);
+  if (structure.projectLinks.length !== 6 || structure.projectLinks.some((link) => !link.startsWith("https://github.com/"))) {
+    throw new Error("Every project must link to its GitHub repository");
+  }
   if (structure.centerDelta > 1) throw new Error(`Main content is off-center by ${structure.centerDelta}px`);
 
   await page.getByRole("button", { name: /My Kitchen/ }).click();
@@ -72,6 +78,17 @@ await desktopPage.evaluate(() => window.scrollTo(0, 0));
 await desktopPage.screenshot({ path: "/private/tmp/david-site-desktop-final.png" });
 await desktopPage.locator("#projects").scrollIntoViewIfNeeded();
 await desktopPage.screenshot({ path: "/private/tmp/david-site-desktop-projects-final.png" });
+await desktopPage.locator("#music").scrollIntoViewIfNeeded();
+const musicColumnWidths = await desktopPage.evaluate(() => ({
+  player: document.querySelector<HTMLElement>(".player-wrap")!.getBoundingClientRect().width,
+  tracks: document.querySelector<HTMLElement>(".track-list")!.getBoundingClientRect().width,
+}));
+if (Math.abs(musicColumnWidths.player - musicColumnWidths.tracks) > 1) {
+  throw new Error(
+    `Music columns differ by ${Math.abs(musicColumnWidths.player - musicColumnWidths.tracks)}px`,
+  );
+}
+await desktopPage.screenshot({ path: "/private/tmp/david-site-desktop-music-final.png" });
 
 await browser.close();
 

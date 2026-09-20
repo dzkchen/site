@@ -105,6 +105,10 @@
     @apply text-xl font-semibold leading-tight;
   }
 
+  .project-heading h3 a {
+    @apply text-ink decoration-ink/25 hover:text-blue hover:decoration-blue/40;
+  }
+
   .project-heading span {
     @apply text-xs text-orange;
   }
@@ -134,7 +138,7 @@
   }
 
   .music-layout {
-    @apply grid gap-4 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:items-start;
+    @apply grid gap-4 md:grid-cols-2 md:items-start;
   }
 
   .player-wrap {
