@@ -193,6 +193,23 @@
   footer .inline-links {
     @apply mt-2;
   }
+
+  .webring {
+    @apply mt-6 flex items-center gap-2 text-sm text-muted;
+  }
+
+  .webring a {
+    @apply flex items-center text-muted decoration-transparent hover:text-ink hover:decoration-ink/40;
+  }
+
+  .webring img {
+    @apply h-auto w-6 opacity-70 transition-opacity;
+  }
+
+  .webring a:hover img,
+  .webring a:focus-visible img {
+    @apply opacity-100;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
