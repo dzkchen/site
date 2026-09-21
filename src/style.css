@@ -186,16 +186,8 @@
     @apply border-t border-rule pt-8;
   }
 
-  footer > p {
-    @apply text-sm;
-  }
-
-  footer .inline-links {
-    @apply mt-2;
-  }
-
   .webring {
-    @apply mt-6 flex items-center gap-2 text-sm text-muted;
+    @apply flex items-center justify-center gap-2 text-sm text-muted;
   }
 
   .webring a {
