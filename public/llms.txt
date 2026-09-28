@@ -1,0 +1,27 @@
+# David Chen
+
+> David Chen (David Zekai Chen, @dzkchen) is a software developer and CS + Finance student at the University of Waterloo in Waterloo, Ontario, Canada. Builds AI tools, fintech products, and developer software.
+
+## Experience
+
+- Member of Technical Staff Intern at Ise AI (Sequoia-backed startup): built marketing automations supporting ad campaigns for brands including KATSEYE.
+- Full Stack Software Engineering Intern at GWL: built tools for coordinating multiple clients across B2B freight and drayage.
+- Co-building a logistics startup focused on OCR with a Meta software engineer (paused).
+- Built payment credit software for a high school processing $14.8K/yr across 5,600+ transactions and 1,000+ users.
+
+## Projects
+
+- [fraserpayv2](https://github.com/dzkchen/fraserpayv2): payment system for a school charity event; reduced fraud and made money trails auditable. $14.8K processed yearly, 5,600+ transactions, 1,000+ users.
+- [Doceo](https://github.com/dzkchen/doceo): 2nd place at Eureka Hacks 2026. Piano coach that turns a performance video into score alignment, posture checks, and practice feedback.
+- [Penny](https://github.com/dzkchen/penny): 2nd place at JamHacks 10 (GenAI). Semi-autonomous pentesting with sandboxed models and deterministic signals that hands ranked fixes to coding agents.
+- [Fraser Grads '26](https://github.com/dzkchen/grad-26): Go project using middleware and storage buckets; 300+ submissions.
+- [Dhen](https://github.com/dzkchen/dhen): Minecraft mod built with Fabric and Kotlin (282 commits over two months).
+- [Oh My Diff](https://github.com/dzkchen/oh-my-diff)
+
+## Links
+
+- Website: https://www.davidzkchen.win/
+- GitHub: https://github.com/dzkchen
+- LinkedIn: https://www.linkedin.com/in/davidzekaichen
+- X: https://x.com/czkdavid
+- Email: d367chen@uwaterloo.ca

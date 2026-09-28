@@ -9,6 +9,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "typecheck": "tsc",
+    "test:seo": "node --experimental-strip-types scripts/check-seo.ts",
     "test:layout": "node --experimental-strip-types scripts/check-layout.ts"
   },
   "engines": {
