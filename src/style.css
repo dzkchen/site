@@ -80,8 +80,7 @@
     @apply object-cover object-[center_70%];
   }
 
-  section,
-  footer {
+  section {
     @apply mt-20 scroll-mt-8 sm:mt-24;
   }
 
@@ -180,27 +179,6 @@
 
   .track-list button[aria-pressed="true"] {
     @apply border-blue bg-blue/5;
-  }
-
-  footer {
-    @apply border-t border-rule pt-8;
-  }
-
-  .webring {
-    @apply flex items-center justify-center gap-2 text-sm text-muted;
-  }
-
-  .webring a {
-    @apply flex items-center text-muted decoration-transparent hover:text-ink hover:decoration-ink/40;
-  }
-
-  .webring img {
-    @apply h-auto w-6 opacity-70 transition-opacity;
-  }
-
-  .webring a:hover img,
-  .webring a:focus-visible img {
-    @apply opacity-100;
   }
 }
 

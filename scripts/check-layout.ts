@@ -41,7 +41,7 @@ const assertPage = async (page: Page) => {
   if (structure.scrollWidth > structure.clientWidth) {
     throw new Error(`Horizontal overflow: ${structure.scrollWidth}px > ${structure.clientWidth}px`);
   }
-  if (structure.sections !== 5) throw new Error(`Expected 5 sections, found ${structure.sections}`);
+  if (structure.sections !== 4) throw new Error(`Expected 4 sections, found ${structure.sections}`);
   if (structure.tracks !== 7) throw new Error(`Expected 7 tracks, found ${structure.tracks}`);
   if (structure.contacts !== 4) throw new Error(`Expected 4 contact links, found ${structure.contacts}`);
   if (structure.projects !== 6) throw new Error(`Expected 6 projects, found ${structure.projects}`);
