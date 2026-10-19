@@ -16,7 +16,7 @@
 - [Penny](https://github.com/dzkchen/penny): 2nd place at JamHacks 10 (GenAI). Semi-autonomous pentesting with sandboxed models and deterministic signals that hands ranked fixes to coding agents.
 - [Fraser Grads '26](https://github.com/dzkchen/grad-26): Go project using middleware and storage buckets; 300+ submissions.
 - [Dhen](https://github.com/dzkchen/dhen): Minecraft mod built with Fabric and Kotlin (282 commits over two months).
-- [Oh My Diff](https://github.com/dzkchen/oh-my-diff)
+- [Oh My Diff](https://github.com/dzkchen/oh-my-diff): Codex CLI extended with TypeScript mods; a mod host for new commands, tools, context, and screens that keeps Codex settings, sign-in, and sessions. Ships with a collection of mods (status line, plan panel, idle compaction, and more).
 
 ## Links
 
