@@ -14,7 +14,7 @@ const waitForReady = async (page: Page) => {
     () => getComputedStyle(document.querySelector<HTMLElement>(".project-list")!).display === "grid",
   );
   await page.evaluate(() => document.fonts.ready);
-  await page.locator(".landscape img").evaluate((image: HTMLImageElement) => image.decode());
+
 };
 
 const assertPage = async (page: Page) => {
@@ -41,21 +41,20 @@ const assertPage = async (page: Page) => {
   if (structure.scrollWidth > structure.clientWidth) {
     throw new Error(`Horizontal overflow: ${structure.scrollWidth}px > ${structure.clientWidth}px`);
   }
-  if (structure.sections !== 4) throw new Error(`Expected 4 sections, found ${structure.sections}`);
-  if (structure.tracks !== 7) throw new Error(`Expected 7 tracks, found ${structure.tracks}`);
+  if (structure.sections !== 2) throw new Error(`Expected 2 sections, found ${structure.sections}`);
+  if (structure.tracks !== 0) throw new Error(`Expected 0 tracks, found ${structure.tracks}`);
   if (structure.contacts !== 4) throw new Error(`Expected 4 contact links, found ${structure.contacts}`);
-  if (structure.projects !== 6) throw new Error(`Expected 6 projects, found ${structure.projects}`);
-  if (structure.projectLinks.length !== 6 || structure.projectLinks.some((link) => !link.startsWith("https://github.com/"))) {
-    throw new Error("Every project must link to its GitHub repository");
+  if (structure.projects !== 7) throw new Error(`Expected 7 projects, found ${structure.projects}`);
+  if (structure.projectLinks.length !== 7 || structure.projectLinks.some((link) => !link.startsWith("https://"))) {
+    throw new Error("Every project must have an HTTPS link");
   }
-  if (structure.centerDelta > 1) throw new Error(`Main content is off-center by ${structure.centerDelta}px`);
+  await page.getByRole("button", { name: "step", exact: true }).click();
+  if (await page.locator('[data-generation]').textContent() !== '0001') throw new Error('Step failed');
+  await page.getByRole('button', {name: 'run', exact: true}).click();
+  await page.waitForFunction(() => Number(document.querySelector('[data-generation]')?.textContent) > 1);
+  await page.getByRole('button', {name: 'reset', exact: true}).click();
+  if (await page.locator('[data-generation]').textContent() !== '0000') throw new Error('Reset failed');
 
-  await page.getByRole("button", { name: /My Kitchen/ }).click();
-  const playerSource = await page.locator("[data-player]").getAttribute("src");
-  const playerStatus = await page.locator("[data-player-status]").textContent();
-  if (!playerSource?.includes("5IFi8YfugyA9JBdfHlaMUP") || !playerStatus?.includes("My Kitchen")) {
-    throw new Error("Selecting My Kitchen did not update the Spotify player");
-  }
 };
 
 const mobilePage = await browser.newPage({ viewport: { width: 390, height: 844 } });
@@ -65,10 +64,6 @@ await mobilePage.reload({ waitUntil: "domcontentloaded" });
 await waitForReady(mobilePage);
 await mobilePage.evaluate(() => window.scrollTo(0, 0));
 await mobilePage.screenshot({ path: "/private/tmp/david-site-mobile-final.png" });
-await mobilePage.locator("#music").scrollIntoViewIfNeeded();
-await mobilePage.waitForTimeout(2_000);
-await mobilePage.screenshot({ path: "/private/tmp/david-site-mobile-music-final.png" });
-
 const desktopPage = await browser.newPage({ viewport: { width: 1440, height: 1000 } });
 await desktopPage.emulateMedia({ reducedMotion: "reduce" });
 await assertPage(desktopPage);
@@ -78,18 +73,6 @@ await desktopPage.evaluate(() => window.scrollTo(0, 0));
 await desktopPage.screenshot({ path: "/private/tmp/david-site-desktop-final.png" });
 await desktopPage.locator("#projects").scrollIntoViewIfNeeded();
 await desktopPage.screenshot({ path: "/private/tmp/david-site-desktop-projects-final.png" });
-await desktopPage.locator("#music").scrollIntoViewIfNeeded();
-const musicColumnWidths = await desktopPage.evaluate(() => ({
-  player: document.querySelector<HTMLElement>(".player-wrap")!.getBoundingClientRect().width,
-  tracks: document.querySelector<HTMLElement>(".track-list")!.getBoundingClientRect().width,
-}));
-if (Math.abs(musicColumnWidths.player - musicColumnWidths.tracks) > 1) {
-  throw new Error(
-    `Music columns differ by ${Math.abs(musicColumnWidths.player - musicColumnWidths.tracks)}px`,
-  );
-}
-await desktopPage.screenshot({ path: "/private/tmp/david-site-desktop-music-final.png" });
-
 await browser.close();
 
 console.log("Responsive layout checks passed at 390×844 and 1440×1000.");

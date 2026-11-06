@@ -8,7 +8,7 @@ const sitemap = readFileSync("public/sitemap.xml", "utf8");
 const llms = readFileSync("public/llms.txt", "utf8");
 const jsonLdMatch = html.match(/<script type="application\/ld\+json">\s*([\s\S]*?)\s*<\/script>/);
 
-assert.match(html, /<title>David Chen \| Software Developer at UWaterloo<\/title>/);
+assert.match(html, /<title>David Chen — site<\/title>/);
 assert.match(html, /<meta\s+name="description"[\s\S]*?content="[^"]+"/);
 assert.match(html, /<meta name="robots" content="index, follow" \/>/);
 assert.match(html, new RegExp(`<link rel="canonical" href="${canonicalUrl}" \\/>`));
